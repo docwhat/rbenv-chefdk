@@ -19,7 +19,16 @@ if you follow the suggestion in [Homebrew](http://brew.sh/) on OS X.
 Then create an empty directory in `$RBENV_ROOT/versions` called `chefdk`:
 
 ``` sh
-mkdir "$RBENV_ROOT/versions/chefdk"
+$ mkdir "$RBENV_ROOT/versions/chefdk"
+```
+
+Finally, change to the new `chefdk` version and run `rbenv rehash`.
+
+``` sh
+$ rbenv shell chefdk
+$ rbenv rehash
+$ rbenv which ruby
+/opt/chefdk/embedded/bin/ruby
 ```
 
 That's it!
