@@ -12,14 +12,14 @@ Requirements
 Installation
 ------------
 
-To install rbenv-chefdk, clone this repository into the `$RBENV_ROOT/plugins`
+To install rbenv-chefdk, clone this repository into the `$(rbenv root)/plugins`
 directory. This is usually `~/.rbenv/plugins` or `/usr/local/var/rbenv/plugins`
 if you follow the suggestion in [Homebrew](http://brew.sh/) on OS X.
 
-Then create an empty directory in `$RBENV_ROOT/versions` called `chefdk`:
+Then create an empty directory in `$(rbenv root)/versions` called `chefdk`:
 
 ``` sh
-$ mkdir "$RBENV_ROOT/versions/chefdk"
+$ mkdir "$(rbenv root)/versions/chefdk"
 ```
 
 Finally, change to the new `chefdk` version and run `rbenv rehash`.
@@ -74,7 +74,7 @@ If we made shims of these commands, your system might break when not using
 chefdk and can produce unexpected results even if you were using chefdk if your
 version of these commands are different (e.g. Gnu vs. BSD or version).
 
-### Why not just symlink `/opt/chefdk/embedded` to `$RBENV_ROOT/versions/chefdk`?
+### Why not just symlink `/opt/chefdk/embedded` to `$(rbenv root)/versions/chefdk`?
 
 For the same reason we don't include `/opt/chefdk/embedded/bin`: It breaks
 systems commands in unexpected ways.
