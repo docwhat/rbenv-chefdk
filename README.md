@@ -16,6 +16,11 @@ To install rbenv-chefdk, clone this repository into the `$RBENV_ROOT/plugins`
 directory. This is usually `~/.rbenv/plugins` or `/usr/local/var/rbenv/plugins`
 if you follow the suggestion in [Homebrew](http://brew.sh/) on OS X.
 
+
+``` sh
+$ git clone https://github.com/docwhat/rbenv-chefdk.git $(rbenv root)/plugins/rbenv-chefdk
+```
+
 Then create an empty directory in `$RBENV_ROOT/versions` called `chefdk`:
 
 ``` sh
