@@ -20,10 +20,10 @@ cd $(rbenv root)/plugins
 git clone <url>
 ```
 
-If you've previously installed ChefDK which led you to using this plugin, you
-will want to remove the profile modifications recommended
-[here](https://docs.chef.io/install_dk.html#set-system-ruby) or in the Homebrew
-info gist. Not doing so will cause unintended side effects.
+**Warning:** If you've previously installed ChefDK which led you to using this
+plugin, you will want to remove the profile changes recommended in the [ChefDK
+install instructions](https://docs.chef.io/install_dk.html#set-system-ruby) or
+in the Homebrew info gist. Otherwise `rbenv` or ChefDK will not work correctly.
 
 Then create an empty directory in `$(rbenv root)/versions` called `chefdk`:
 
@@ -105,7 +105,7 @@ Note on Patches/Pull Requests
 
 -   Fork the project.
 -   Make your feature addition or bug fix.
--   Add tests for it. This is important so I don't break it in a future version
-    unintentionally.
+-   Add tests for it. This is important so I don't break it in a future
+    version unintentionally.
 -   Commit
 -   Send me a pull request. Bonus points for topic branches.
