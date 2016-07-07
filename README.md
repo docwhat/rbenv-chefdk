@@ -90,9 +90,9 @@ systems commands in unexpected ways.
 
 ### Rbenv isn't working or is using gems from the wrong place
 
-Make sure you undid any changes recommended by the [ChefDK
-install instructions](https://docs.chef.io/install_dk.html#set-system-ruby) or
-in the Homebrew info gist.
+Make sure you undid any changes recommended by the [ChefDK install
+instructions](https://docs.chef.io/install_dk.html#set-system-ruby) or in the
+Homebrew info gist.
 
 Specifically, make sure you aren't calling `chef shell-init` anyplace in your
 shell startup files.
