@@ -97,6 +97,19 @@ in the Homebrew info gist.
 Specifically, make sure you aren't calling `chef shell-init` anyplace in your
 shell startup files.
 
+### "can't find executable chef (Gem::Exception)"
+
+This is probably because you are using
+[`rbenv-bundle-exec`](https://github.com/maljub01/rbenv-bundle-exec).
+
+You'll have to tell `rbenv-bundle-exec` to ignore a bunch of binaries that are
+only in ChefDK:
+
+``` sh
+echo chef >> ~/.no_bundle_exec
+echo berks >> ~/.no_bundle_exec
+```
+
 Questions?
 ----------
 
