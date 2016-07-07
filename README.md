@@ -119,7 +119,8 @@ You can reach me at [docwhat.org](https://docwhat.org/email/) or as docwhat on
 License
 -------
 
-Copyright (c) 2015 Christian Höltje - Released under the MIT License (see the
+Copyright (c) 2015,2016 Christian Höltje - Released under the MIT License (see
+the
 `LICENSE` file)
 
 Note on Patches/Pull Requests
