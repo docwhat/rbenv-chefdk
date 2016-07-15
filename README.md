@@ -42,6 +42,15 @@ $ rbenv which ruby
 
 That's it!
 
+Troubleshooting
+---------------
+
+If you are having problems, try running `sanity-check.sh`:
+
+``` sh
+$ $SHELL "$(rbenv root)/plugins/rbenv-chefdk/sanity-check.sh"
+```
+
 What rbenv-chefdk is doing...
 -----------------------------
 
