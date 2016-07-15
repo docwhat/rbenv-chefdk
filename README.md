@@ -51,27 +51,6 @@ If you are having problems, try running `sanity-check.sh`:
 $ $SHELL "$(rbenv root)/plugins/rbenv-chefdk/sanity-check.sh"
 ```
 
-What rbenv-chefdk is doing...
------------------------------
-
-rbenv-chefdk modifies `rbenv which` and `rbenv rehash` to search for
-executables in:
-
-1.  `~/.chefdk/gem/ruby/<ruby_lib_version>/bin` -- When you install gems in
-    ChefDK, this is where gems are installed when using the ChefDK.
-2.  `/opt/chefdk/bin` -- These are the normal commands for using chef.
-3.  `/opt/chefdk/embedded/bin` -- This is only added to `rbenv which` and
-    partially to `rbenv rehash`. Some of the commands here would break your
-    system if shims were created for them.
-4.  `/opt/chefdk/embedded/lib/ruby/gems/<ruby_lib_version>/bin` -- These are
-    the gems that ChefDK pre-installed for you.
-
-The `rbenv which` command is used by all the internal rbenv plumbing, including
-the shims and `rbenv exec`.
-
-The `rbenv rehash` command generates the shims you are actually using when you
-run a command that came with ruby or a gem.
-
 Frequently Asked Questions
 --------------------------
 
