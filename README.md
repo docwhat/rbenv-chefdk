@@ -1,20 +1,21 @@
-rbenv-chefdk: Use ChefDK with rbenv
+rbenv-chef-workstation: Use Chef Workstation with rbenv
 ===================================
 
-This plugin lets you treat [ChefDK](https://downloads.chef.io/chef-dk/) as
-another version in [rbenv](http://rbenv.org/).
+This plugin lets you treat [Chef Workstation](https://downloads.chef.io/chef-workstation/) as
+another version in [rbenv](http://rbenv.org/). This was forked from the original 
+[rbenv-chefdk plugin](https://github.com/docwhat/rbenv-chefdk written by Christian Höltje.)
 
 Requirements
 ------------
 
--   [ChefDK](https://downloads.chef.io/chef-dk/) installed in `/opt/chefdk`
+-   [Chef Workstation](https://downloads.chef.io/chef-workstation/) installed in `/opt/chef-workstation`
 
 Installation
 ------------
 
 ### From GitHub
 
-To install rbenv-chefdk, clone this repository into the `$(rbenv root)/plugins`
+To install rbenv-chef-workstation, clone this repository into the `$(rbenv root)/plugins`
 directory.
 
 ``` sh
@@ -26,27 +27,27 @@ git clone <url>
 
 On macOS, you can use [`brew`](https://brew.sh/) to install:
 ```
-brew install rbenv-chefdk
+brew install rbenv-chef-workstation
 ```
 
-**Warning:** If you've previously installed ChefDK which led you to using this
-plugin, you will want to remove the profile changes recommended in the [ChefDK
+**Warning:** If you've previously installed Chef Workstation which led you to using this
+plugin, you will want to remove the profile changes recommended in the [Chef Workstation
 install instructions](https://docs.chef.io/install_dk.html#set-system-ruby) or
-in the Homebrew info gist. Otherwise `rbenv` or ChefDK will not work correctly.
+in the Homebrew info gist. Otherwise `rbenv` or Chef Workstation will not work correctly.
 
-Then create an empty directory in `$(rbenv root)/versions` called `chefdk`:
+Then create an empty directory in `$(rbenv root)/versions` called `chef-workstation`:
 
 ``` sh
-$ mkdir "$(rbenv root)/versions/chefdk"
+$ mkdir "$(rbenv root)/versions/chef-workstation"
 ```
 
-Finally, change to the new `chefdk` version and run `rbenv rehash`.
+Finally, change to the new `chef-workstation` version and run `rbenv rehash`.
 
 ``` sh
-$ rbenv shell chefdk
+$ rbenv shell chef-workstation
 $ rbenv rehash
 $ rbenv which ruby
-/opt/chefdk/embedded/bin/ruby
+/opt/chef-workstation/embedded/bin/ruby
 ```
 
 That's it!
@@ -57,7 +58,7 @@ Troubleshooting
 If you are having problems, try running `sanity-check.sh`:
 
 ``` sh
-$ $SHELL "$(rbenv root)/plugins/rbenv-chefdk/sanity-check.sh"
+$ $SHELL "$(rbenv root)/plugins/rbenv-chef-workstation/sanity-check.sh"
 ```
 
 Frequently Asked Questions
@@ -65,29 +66,29 @@ Frequently Asked Questions
 
 ### Hey, what happened to `gem`?
 
-With the ChefDK you have to use `chef gem` instead.
+With the Chef Workstation you have to use `chef gem` instead.
 
-### Why don't you include `/opt/chefdk/embedded/bin`?
+### Why don't you include `/opt/chef-workstation/embedded/bin`?
 
-We don't fully include the `/opt/chefdk/embedded/bin` directory because it'll
+We don't fully include the `/opt/chef-workstation/embedded/bin` directory because it'll
 break your system in subtle ways.
 
-`/opt/chefdk/embedded/bin` has commands like `clear`, `tput`, `xsltproc`, and
+`/opt/chef-workstation/embedded/bin` has commands like `clear`, `tput`, `xsltproc`, and
 `xz`. These are commands that are part of your system and are only included in
-ChefDK so it gets reliable results across platforms.
+Chef Workstation so it gets reliable results across platforms.
 
 If we made shims of these commands, your system might break when not using
-chefdk and can produce unexpected results even if you were using chefdk if your
+chef-workstation and can produce unexpected results even if you were using chef-workstation if your
 version of these commands are different (e.g. Gnu vs. BSD or version).
 
-### Why not just symlink `/opt/chefdk/embedded` to `$(rbenv root)/versions/chefdk`?
+### Why not just symlink `/opt/chef-workstation/embedded` to `$(rbenv root)/versions/chef-workstation`?
 
-For the same reason we don't include `/opt/chefdk/embedded/bin`: It breaks
+For the same reason we don't include `/opt/chef-workstation/embedded/bin`: It breaks
 systems commands in unexpected ways.
 
 ### Rbenv isn't working or is using gems from the wrong place
 
-Make sure you undid any changes recommended by the [ChefDK install
+Make sure you undid any changes recommended by the [Chef Workstation install
 instructions](https://docs.chef.io/install_dk.html#set-system-ruby) or in the
 Homebrew info gist.
 
@@ -100,7 +101,7 @@ This is probably because you are using
 [`rbenv-bundle-exec`](https://github.com/maljub01/rbenv-bundle-exec).
 
 You'll have to tell `rbenv-bundle-exec` to ignore a bunch of binaries that are
-only in ChefDK:
+only in Chef Workstation:
 
 ``` sh
 echo chef >> ~/.no_bundle_exec
