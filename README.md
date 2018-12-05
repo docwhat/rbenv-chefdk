@@ -4,6 +4,8 @@ rbenv-chefdk: Use ChefDK with rbenv
 This plugin lets you treat [ChefDK](https://downloads.chef.io/chef-dk/) as
 another version in [rbenv](http://rbenv.org/).
 
+**deprecated** ChefDK has been replaced by Chef Workstation. See the [rbenv-chef-workstation](https://github.com/docwhat/rbenv-chef-workstation) plugin instead.
+
 Requirements
 ------------
 
